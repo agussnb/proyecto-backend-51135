@@ -44,7 +44,7 @@ class ProductManager {
       const id = this.currentId++;
       product.id = id;
     
-      const productosJson = JSON.stringify([...this.products, product]); // crea una copia actualizada de this.products y agrega el nuevo producto
+      const productosJson = JSON.stringify([...this.products, product]);
       this.products.push(product);
     
       try {
@@ -57,6 +57,7 @@ class ProductManager {
 
     async getProducts(){
       try {
+        //Leo el archivo json y obtengo los productos.
         const data = await fs.promises.readFile(this.path,'utf-8');
         console.log(JSON.stringify(JSON.parse(data), null,2));
       } catch (error) {
@@ -74,13 +75,16 @@ class ProductManager {
       if (index === -1) {
         throw new Error(`No existe un producto con el id ${id}`);
       }
+      //Busco el indice del producto y su id, si lo encuentro, creo el producto actualizado, de lo contrario, se dispara un error.
       const updatedProduct = {
         ...this.products[index],
         ...updateFields,
         code: id
       };
+      //Le paso al array el nuevo producto actualizado, luego se convierte en string para que pueda ser escrito con fs.
       this.products[index] = updatedProduct;
       const productosJson = JSON.stringify(this.products);
+      //Se escribe el archivo json con el nuevo producto actualizado.
       try {
         await fs.promises.writeFile(this.path, productosJson);
         console.log('Archivo actualizado satisfactoriamente.');
@@ -95,11 +99,11 @@ class ProductManager {
         throw new Error(`No existe un producto con el id ${id}`);
       }
 
-      this.products.splice(index,1)
+      this.products.splice(index,1) //Elimina del array el producto seleccionado por id usando el indice.
       const productosJson = JSON.stringify(this.products);
       try {
-        await fs.promises.truncate(this.path);
-        await fs.promises.writeFile(this.path, productosJson);
+        await fs.promises.truncate(this.path); //Elimina todo el contenido del archivo json.
+        await fs.promises.writeFile(this.path, productosJson);  //Vuelve a escribir el archivo json con la info nueva.
         console.log('Producto eliminado correctamente')
       } catch (error) {
         throw new Error('No se pudieron cargar los productos al archivo')
@@ -114,16 +118,17 @@ class ProductManager {
 
   const manager = new ProductManager(products)
 
-  manager.addProduct(productoUno)
-  manager.addProduct(productoDos)
-  manager.addProduct(productoTres)
-  manager.addProduct(productoCuatro)
+  manager.addProduct(productoUno) //Agrego el producto 1 
+  manager.addProduct(productoDos) //Agrego el producto 2
+  manager.addProduct(productoTres)  //Agrego el producto 3 
+  manager.addProduct(productoCuatro)  //Agrego el producto 4
 
-  manager.updateProduct(2,{price:350})
-  manager.deleteProduct(4)
+  manager.updateProduct(2,{price:350, stock:10})  //Modifico el producto con id 2
+  manager.deleteProduct(4) //Borro el producto con id 4 del archivo y del array
 //Imprimo en la consola los productos.
     console.log('-----------------------------')
-    console.log(manager);
+    console.log(manager); 
     console.log('-----------------------------')
-    //manager.getProducts()
-
+    console.log(manager.getProducts())
+    console.log('-----------------------------')
+    console.log(manager.getProductById(2));
