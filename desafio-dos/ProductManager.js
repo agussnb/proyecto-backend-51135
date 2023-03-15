@@ -127,6 +127,11 @@ class ProductManager {
   const productoDos = new Product ('Bersa BP9CC','Pistola calibre 9x19mm modelo BP9CC',299,'bersaBP9CC.jpg',2,15)
   const productoTres = new Product ('Ruger SR22P','Pistola calibre 22mm modelo SR22P',299,'rugerSR22P.jpg',3,15)
   const productoCuatro = new Product ('Sig Sauer SIG 716','Carabina calibre 7.62 semiautomatica modelo SIG 716',13030,'sig716.jpg',4,15)
+  const productoCinco = new Product ('Colt  M4 Trooper','Carabina calibre 5.56x45 mm',1150,'coltm4trooper.jpg',5,15)
+  const productoSeis = new Product ('Smith & Wesson M&P15-22 M-LOK KRYPTEK','Carabina semiautomatica calibre 5.56mm',550,'s&wmp1522.jpg',6,15)
+  const productoSiete = new Product ('Christensen Arms MPR','Rifle de cerrojo calibre 6.5 PRC',2400,'ChristensenArmsMPR.jpg',7,15)
+  const productoOcho = new Product ('Ruger American Rimfire LRT','Rifle de cerrojo calibre .22mm',330,'RugerLRT.jpg',8,15)
+  const productoNueve = new Product ('Remington 700 ADL','Rifle de cerrojo calibre .30-06 SPRG',595,'Remington700ADL.jpg',9,15)
 
   const manager = new ProductManager(products)
 
@@ -137,7 +142,12 @@ class ProductManager {
       // await manager.addProduct(productoDos); Comentado porque: Ya esta agregado el producto
       // await manager.addProduct(productoTres);  Comentado porque: Ya esta agregado el producto
       // await manager.addProduct(productoCuatro);  Comentado porque: Ya esta agregado el producto
-  
+      //await manager.addProduct(productoCinco);  Comentado porque: Ya esta agregado el producto
+      //await manager.addProduct(productoSeis); Comentado porque: Ya esta agregado el producto
+      //await manager.addProduct(productoSiete);  Comentado porque: Ya esta agregado el producto
+      //await manager.addProduct(productoOcho); Comentado porque: Ya esta agregado el producto
+      //await manager.addProduct(productoNueve);  Comentado porque: Ya esta agregado el producto
+          
       // Modificar producto
       //await manager.updateProduct(2, { price: 350, stock: 10 });  Comentado porque: Ya esta actualizado el producto
   

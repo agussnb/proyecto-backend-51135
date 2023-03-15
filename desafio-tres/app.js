@@ -38,16 +38,17 @@ app.get('/products', async (req, res) => {
   if (limit) {
     matchingProducts = matchingProducts.slice(0, limit);
   }
-
   res.json(matchingProducts);
 });
 
 app.get('/products/:pid', async (req, res) => {
   const productId = req.params.pid;
-  console.log('Id del producto: ' + productId);
   try {
     const product = await productManager.getProductById(productId);
-    console.log(product);
+    console.log('Id del producto: ' + productId);
+    console.log('Console.log del producto '+product);
+    console.log(productManager.getProductById(productId));
+    console.log(productManager.getProductById(5))
     if (!product) {
       return res.status(404).send('Producto no encontrado');
     }
@@ -59,8 +60,8 @@ app.get('/products/:pid', async (req, res) => {
   }
 });
 
-
 // Listen del port
 app.listen(PORT, () => {
-  console.log(`Server running in port:${PORT}`);
+  console.log(`Server running on port:${PORT}`);
 });
+

@@ -30,4 +30,44 @@
     "code": 4,
     "stock": 15,
     "id": 4
+}, {
+    "title": "Colt  M4 Trooper",
+    "description": "Carabina calibre 5.56x45 mm",
+    "price": 1150,
+    "thumbnail": "coltm4trooper.jpg",
+    "code": 5,
+    "stock": 15,
+    "id": 5
+}, {
+    "title": "Smith & Wesson M&P15-22 M-LOK KRYPTEK",
+    "description": "Carabina semiautomatica calibre 5.56mm",
+    "price": 550,
+    "thumbnail": "s&wmp1522.jpg",
+    "code": 6,
+    "stock": 15,
+    "id": 6
+}, {
+    "title": "Christensen Arms MPR",
+    "description": "Rifle de cerrojo calibre 6.5 PRC",
+    "price": 2400,
+    "thumbnail": "ChristensenArmsMPR.jpg",
+    "code": 7,
+    "stock": 15,
+    "id": 7
+}, {
+    "title": "Ruger American Rimfire LRT",
+    "description": "Rifle de cerrojo calibre .22mm",
+    "price": 330,
+    "thumbnail": "RugerLRT.jpg",
+    "code": 8,
+    "stock": 15,
+    "id": 8
+}, {
+    "title": "Remington 700 ADL",
+    "description": "Rifle de cerrojo calibre .30-06 SPRG",
+    "price": 595,
+    "thumbnail": "Remington700ADL.jpg",
+    "code": 9,
+    "stock": 15,
+    "id": 9
 }]
